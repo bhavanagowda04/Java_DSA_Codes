@@ -1,0 +1,29 @@
+# .github/workflows/run-firstprogram.yml
+
+name: Run Only FirstProgram
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # allows you to manually trigger
+
+jobs:
+  run-java:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: ☕ Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+
+      - name: 🛠 Compile ONLY firstprogram.java
+        run: javac firstprogram.java
+
+      - name: 🚀 Run ONLY firstprogram
+        run: java firstprogram
