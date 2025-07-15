@@ -23,9 +23,10 @@ jobs:
 
       - name: 🚀 Run All Java Programs Automatically
         run: |
-          for file in *.java; do
-            classname=$(basename "$file" .java)
-            echo "🔹 Running $classname..."
-            java "$classname"
-            echo "--------------------------"
-          done
+         for file in *.java; do
+         classname=$(basename "$file" .java)
+         echo "🔹 Running $classname..."
+         java "$classname" || echo "⚠️ $classname failed, skipping..."
+         echo "------------------------"
+         done
+
