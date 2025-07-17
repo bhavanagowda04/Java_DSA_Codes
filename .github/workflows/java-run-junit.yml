@@ -18,29 +18,27 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: 🛠 Compile and Run All Root Java Files
+      - name: 🛠 Compile and Run All Java Files in src/main/java
         run: |
-          echo "🔹 Compiling all root-level .java files..."
-          shopt -s nullglob
-          java_files=(*.java)
-          
-          if [ ${#java_files[@]} -eq 0 ]; then
-            echo "⚠️ No .java files found in root directory."
+          echo "🔹 Compiling all Java files in src/main/java..."
+          find src/main/java -name "*.java" > sources.txt
+          if [ ! -s sources.txt ]; then
+            echo "⚠️ No Java files found to compile."
             exit 0
           fi
-          
-          javac "${java_files[@]}"
 
-          echo "🚀 Running all root-level .java classes..."
-          for file in "${java_files[@]}"; do
-            classname=$(basename "$file" .java)
+          mkdir -p compiled_classes
+          javac -d compiled_classes @sources.txt
+
+          echo "🚀 Running all Java classes with main() method..."
+          # Run all classes with main() method (assuming public class name = file name)
+          for classfile in $(find compiled_classes -name "*.class"); do
+            classname=$(echo "$classfile" | sed 's|compiled_classes/||' | sed 's|/|.|g' | sed 's|.class||')
             echo "▶️ Running $classname..."
             echo "========================"
-            java "$classname" || echo "⚠️ $classname failed, skipping..."
+            java -cp compiled_classes "$classname" || echo "⚠️ $classname failed, skipping..."
             echo "------------------------"
           done
 
-
-      - name: 📦 Build with Maven (runs JUnit tests)
+      - name: 📦 Run Maven Tests (JUnit)
         run: mvn clean test
-
