@@ -18,20 +18,28 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: 🛠 Compile and Run All Root Java Files (Optional)
+      - name: 🛠 Compile and Run All Root Java Files
         run: |
           echo "🔹 Compiling all root-level .java files..."
-          for file in *.java; do
-            [ -f "$file" ] && javac "$file"
-          done
+          shopt -s nullglob
+          java_files=(*.java)
+          
+          if [ ${#java_files[@]} -eq 0 ]; then
+            echo "⚠️ No .java files found in root directory."
+            exit 0
+          fi
+          
+          javac "${java_files[@]}"
 
           echo "🚀 Running all root-level .java classes..."
-          for file in *.java; do
+          for file in "${java_files[@]}"; do
             classname=$(basename "$file" .java)
-            echo "▶️ Running $classname"
+            echo "▶️ Running $classname..."
+            echo "========================"
             java "$classname" || echo "⚠️ $classname failed, skipping..."
             echo "------------------------"
           done
+
 
       - name: 📦 Build with Maven (runs JUnit tests)
         run: mvn clean test
