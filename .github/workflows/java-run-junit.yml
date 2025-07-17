@@ -1,0 +1,38 @@
+name: Run Java & JUnit Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-run-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: ☕ Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: 🛠 Compile and Run All Root Java Files (Optional)
+        run: |
+          echo "🔹 Compiling all root-level .java files..."
+          for file in *.java; do
+            [ -f "$file" ] && javac "$file"
+          done
+
+          echo "🚀 Running all root-level .java classes..."
+          for file in *.java; do
+            classname=$(basename "$file" .java)
+            echo "▶️ Running $classname"
+            java "$classname" || echo "⚠️ $classname failed, skipping..."
+            echo "------------------------"
+          done
+
+      - name: 📦 Build with Maven (runs JUnit tests)
+        run: mvn clean test
+
