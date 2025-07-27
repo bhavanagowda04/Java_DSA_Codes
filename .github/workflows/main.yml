@@ -28,7 +28,7 @@ jobs:
 
     - name: Compile and Run Java Programs
       run: |
-        mkdir classes
+        mkdir -p classes
         find . -name "*.java" > sources.txt
         javac -d classes @sources.txt || echo "⚠️ Some files failed to compile"
 
@@ -40,4 +40,5 @@ jobs:
           java "$classname" || echo "❌ Failed: $classname"
           echo ""
         done
+
 
