@@ -1,32 +1,29 @@
-abstract class Animal { // abstract is juzt concept it cannot be instantiated or run any method
+abstract class AnimalAbstract { // abstract class Animal { // abstract is juzt concept it cannot be instantiated or run any method
     abstract void walk();
-    Animal() {
+    AnimalAbstract() { // Animal() {
         System.out.println("You are creating an animal");
     }
 }
 
-class Horse extends Animal {
-    Horse() {
-        super(); // Added for clarity; calls Animal constructor
+class HorseAbstract extends AnimalAbstract { // class Horse extends Animal {
+    HorseAbstract() { // Horse() {
         System.out.println("created a horse");
     }
-    
     public void walk() {
         System.out.println("walks on 4 legs");
     }
 }
 
-class Chicken extends Animal {
+class ChickenAbstract extends AnimalAbstract { // class Chicken extends Animal {
     public void walk() {
         System.out.println("walks on 2 legs");
     }
 }
 
-public class AbstractClassDemo { // public class Abstract {
-    // public class Abstract {
+public class AbstractionDemo { // public class AbstractClassDemo {
     public static void main(String args[]) {
-        Horse horse = new Horse();
+        HorseAbstract horse = new HorseAbstract(); // Horse horse = new Horse();
         horse.walk();
-        // horse.eats(); // This line is commented out because 'eats()' method does not exist
+        // horse.eats();
     }
 }
