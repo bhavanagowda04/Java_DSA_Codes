@@ -1,15 +1,18 @@
-import java.util.*;
+//import java.util.*;
 
 public class GuessNumberGame {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
+       // Scanner sc = new Scanner(System.in);
         System.out.print("Enter the guessing number:");
-        int numberToGuess = sc.nextInt(); // The number to guess
-        int i = 0; // Initialize a counter variable
+       // int numberToGuess = sc.nextInt(); // The number to guess
+       // int i = 0; // Initialize a counter variable
+        int numberToGuess = 5
+        int i = 0;
 
         while (i == 0) {
             System.out.print("Guess the number between 1 and 10:");
-            int userGuess = sc.nextInt(); // Read user input
+            //int userGuess = sc.nextInt();// Read user input
+            int userGuess  = 4
             if (userGuess == numberToGuess) {
                 System.out.println("Congratulations! You've guessed the number." );
                 break;
@@ -20,6 +23,6 @@ public class GuessNumberGame {
             }
         }
 
-        sc.close();
+        //sc.close();
     }
 }
