@@ -6,11 +6,11 @@ public class battery{
        System.out.println("Enter system batter charge:");
         // Read two integers from the user
       // int a = sc.nextInt();
-        int a = 40
+        int a = 40;
 
        System.out.println("Enter battery to charge:");
        //int b = sc.nextInt();
-        int b = 70
+        int b = 70;
        
 
         if( a + b == 100 ){
