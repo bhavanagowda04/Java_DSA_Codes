@@ -1,0 +1,38 @@
+name: Run Java Programs
+
+on:
+  push:
+    paths:
+      - '**.java'
+  workflow_dispatch: # Optional: allow manual trigger
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'  # Change to 11 or 8 if needed
+
+    - name: Compile Java Programs
+      run: |
+        mkdir classes
+        find . -name "*.java" > sources.txt
+        javac -d classes @sources.txt
+
+    - name: Run Java Programs
+      run: |
+        echo "------ Running Java Programs ------"
+        cd classes
+        for class in $(find . -name "*.class"); do
+          class_name=$(echo "$class" | sed 's|^\./||' | sed 's|/|.|g' | sed 's|.class$||')
+          echo ">>> Running $class_name"
+          java "$class_name"
+          echo ""
+        done
