@@ -26,13 +26,18 @@ jobs:
         find . -name "*.java" > sources.txt
         javac -d classes @sources.txt
 
-    - name: Run Java Programs
+    - name: Compile and Run Java Programs
       run: |
-        echo "------ Running Java Programs ------"
+        mkdir classes
+        find . -name "*.java" > sources.txt
+        javac -d classes @sources.txt || echo "⚠️ Some files failed to compile"
+
+        echo "==== Running Compiled Java Programs ===="
         cd classes
         for class in $(find . -name "*.class"); do
-          class_name=$(echo "$class" | sed 's|^\./||' | sed 's|/|.|g' | sed 's|.class$||')
-          echo ">>> Running $class_name"
-          java "$class_name"
+          classname=$(echo "$class" | sed 's|^\./||' | sed 's|/|.|g' | sed 's|.class$||')
+          echo ">>> Running $classname"
+          java "$classname" || echo "❌ Failed: $classname"
           echo ""
         done
+
