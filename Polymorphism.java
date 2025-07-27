@@ -1,4 +1,4 @@
-class Student {
+class Student_poly {
     String name;
     int age;
     String rollNo;
