@@ -12,11 +12,19 @@ public class Swap {
 
         swap(a , b);
         System.out.println(a + " " + b );
+
+        String name = "Bhavana";
+        changeName(name);
+        System.out.println(name);
+    }
+    static void changeName(String naam){
+        naam = "dora";  //creating new object
     }
 
-    static void swap(int a , int b){
-        int temp = a;
-        a = b;
-        b = temp;
+    static void swap(int num1 , int num2){
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+
     }
 }

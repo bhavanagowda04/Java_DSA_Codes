@@ -1,38 +1,26 @@
 package com.practice02;
 
 
+import java.util.Scanner;
 
 public class Amstrong {
-    public static int main(String[] args) {
+    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter a Number: ");
+//        int a = sc.nextInt();
         int a = 153;
-        int d = 0;
-        int b = a;
         int sum = 0;
+        int copy = a;
 
+            while (a > 0) {
+                int rem = a % 10;
+                a = a / 10;
+                sum = sum + rem * rem * rem;
+            }
+            System.out.println(sum == copy);
 
-        while (a >= 0) {
-            a = a / 10;
-            d++;
-        }
-        System.out.println("the digit: " + d);
-        return d;
     }
 }
 
 
-//
-//
-//        while( b >= 0){
-//            int temp = b % 10;
-//            int power = d ;
-//            int ans = 0;
-//                for(int i = 0; i < d; i++ ){
-//                    ans *= temp;
-//                }
-//            b = b/10;
-//        }
-//
-//        System.out.println("amstrong: " + sum );
-//
-//        return a;
 
