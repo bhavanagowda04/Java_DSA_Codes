@@ -1,5 +1,7 @@
 package com.lecture13;
 
+//https://leetcode.com/problems/richest-customer-wealth/description/?envType=problem-list-v2&envId=array
+
 public class LeetCode1672 {
     public static void main(String[] args) {
 
