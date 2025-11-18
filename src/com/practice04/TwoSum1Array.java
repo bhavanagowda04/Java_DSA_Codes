@@ -1,4 +1,4 @@
-package com.Leetcode;
+package com.practice04;
 
 //https://leetcode.com/problems/two-sum/description/?envType=problem-list-v2&envId=array
 

@@ -1,4 +1,4 @@
-package com.Leetcode;
+package com.practice04;
 
 //https://leetcode.com/problems/concatenation-of-array/description/
 
