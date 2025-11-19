@@ -1,4 +1,4 @@
-package com.lecture14.lecture15;
+package com.lecture15;
 //https://leetcode.com/problems/find-smallest-letter-greater-than-target/submissions/1831373682/
 
 public class LetterCeilingLeetCode744 {

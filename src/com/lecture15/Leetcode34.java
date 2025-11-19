@@ -1,4 +1,4 @@
-package com.lecture14.lecture15;
+package com.lecture15;
 //https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 
 public class Leetcode34 {

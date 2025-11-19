@@ -1,15 +1,15 @@
-package com.lecture14.lecture15;
+package com.lecture15;
 
-public class CeilingOfNum {
+public class FloorOfNum {
     public static void main(String[] args) {
-        int[] arr = {2, 3, 5, 9, 14, 16, 18, 20};
-        int target = 15;
-        int ans = ceiling(arr, target);
+        int[] arr = {2, 3, 4, 5, 12, 13, 14, 16, 17, 20};
+        int target = 15 ;
+        int ans = floor(arr, target);
         System.out.println(ans);
     }
 
-    //return the index of smallest element >= target
-    static int ceiling(int[] arr,int target){
+    //return the index of greatest number <= target
+    static int floor(int[] arr,int target){
         int start = 0;
         int end = arr.length - 1;
 
@@ -37,7 +37,8 @@ public class CeilingOfNum {
                 }
             }
         }
-        return start;
+        return end;
     }
 }
+
 
