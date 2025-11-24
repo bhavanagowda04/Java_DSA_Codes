@@ -1,13 +1,11 @@
 package com.lecture15;
-//https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-public class RotatedBinarySearch {
+public class RotatedBSwithDuplicates {
     public static void main(String[] args) {
         int[] nums = {2,8,2,2};
-        int target = 8;
+        int target = 2;
         System.out.println(search(nums,target));
     }
-
     static int search(int[] nums, int target){
         int pivot = findpivot(nums);
 
@@ -51,11 +49,23 @@ public class RotatedBinarySearch {
             if (mid < end && arr[mid] < arr[mid - 1]) {
                 return mid - 1;
             }
-            if (arr[start] >= arr[mid]) {
-                return mid - 1;
-            }else{
-                return mid + 1;
+
+            if(arr[mid] == arr[start] && arr[mid] == arr[end]){
+                if(arr[start] > arr[start+1]){
+                    return start;
+                }
+                start++;
+                if(arr[end] < arr[end -1]){
+                    return end;
+                }
+                end--;
             }
+            else if(arr[start] < arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end] )){
+                start = mid +1;
+            } else{
+                end = mid -1;
+            }
+
         }
         return -1;
     }
