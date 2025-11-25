@@ -20,7 +20,7 @@ public class Main {
         while(r < matrix.length && c >= 0){
             if(matrix[r][c] == target){
                 return new int[]{r, c} ;
-            }
+            } 
             if(matrix[r][c] < target){
                 r++;
             }else{
