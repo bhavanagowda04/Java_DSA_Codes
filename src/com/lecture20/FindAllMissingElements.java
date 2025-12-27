@@ -1,5 +1,6 @@
 package com.lecture20;
 //https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+import java.util.ArrayList;
 import java.util.List;
 
 class FindAllMissingElements {
@@ -13,7 +14,14 @@ class FindAllMissingElements {
                 i++;
             }
         }
-        //just find missing number 
+        //just find missing number
+        List<Integer> ans = new ArrayList<>();
+        for(int index  = 0; index < nums.length; index++){
+            if(nums[index] != index-1){
+                ans.add(index + 1);
+            }
+        }
+        return ans;
     }
 
     static void swap(int[] arr, int first, int second){
