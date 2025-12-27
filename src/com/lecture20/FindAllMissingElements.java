@@ -17,7 +17,7 @@ class FindAllMissingElements {
         //just find missing number
         List<Integer> ans = new ArrayList<>();
         for(int index  = 0; index < nums.length; index++){
-            if(nums[index] != index-1){
+            if(nums[index] != index + 1){
                 ans.add(index + 1);
             }
         }
