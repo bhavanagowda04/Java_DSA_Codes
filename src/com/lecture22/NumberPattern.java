@@ -1,4 +1,4 @@
-package com.practice9;
+package com.lecture22;
 
 public class NumberPattern {
     static void main() {

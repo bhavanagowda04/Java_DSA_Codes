@@ -1,4 +1,4 @@
-package com.practice9;
+package com.lecture22;
 
 public class StarPattern {
     public static void main(String[] args) {
