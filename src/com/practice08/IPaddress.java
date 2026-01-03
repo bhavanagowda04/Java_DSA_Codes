@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 public class IPaddress {
     static void main() {
-        String address =  "1.1.1.1";
+        String address = "1.1.1.1";
         System.out.println(defangIPaddr(address));
     }
 
     static String defangIPaddr(String address) {
-       return address.replace("." , "[.]");
+        return address.replace(".", "[.]");
     }
+}
+
