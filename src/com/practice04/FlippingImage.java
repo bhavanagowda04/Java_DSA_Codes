@@ -1,5 +1,6 @@
 package com.practice04;
 
+//https://leetcode.com/problems/flipping-an-image/description/
 import java.util.Arrays;
 
 public class FlippingImage {
@@ -13,17 +14,13 @@ public class FlippingImage {
     }
 
     static int[][] flipAndInvertImage(int[][] image) {
-//        int r = image.length;
-//        int c = image[0].length;
-        int[][] arr = new int[image.length][image[0].length];
-        for(int r = 0; r < image.length; r++){
-//            for(int c = 0; c < image[0].length; c--){
-                while(r != image.length-1){
-                    int[] c = {image[0].length % 10};
-                    return new int[][]{};
-                }
+        for(int[] row : image){
+            for(int i = 0; i < (image[0].length + 1)/2; i++){
+                int temp = row[i] ^ 1;
+                row[i] = row[image[0].length - i - 1] ^ 1;
+                row[image[0].length - i - 1] = temp;
             }
-//        }
-        return new int[][] {};
+        }
+        return image;
     }
 }
