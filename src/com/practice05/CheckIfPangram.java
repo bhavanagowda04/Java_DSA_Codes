@@ -1,6 +1,6 @@
 package com.practice05;
 
-class Solution {
+class CheckIfPangram {
     static void main() {
         String sentence = "bcdefghijklmnopqrstuvwxyz";
         System.out.println(checkIfPangram(sentence));;
