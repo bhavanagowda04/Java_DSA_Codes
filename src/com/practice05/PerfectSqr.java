@@ -3,21 +3,22 @@ package com.practice05;
 
 public class PerfectSqr {
     static void main(String[] args) {
-        int num = 14;
+        int num = 2147483647;
         System.out.println(isPerfectSquare(num));
     }
 
     static boolean isPerfectSquare(int num) {
         int s = 0;
-        int e = num;
+        int e = num / 2;
         while( s <= e){
             int m = s + (e - s)/ 2;
-            if(m * m == num){
+            long b = (long)m * m;
+            if(b == num){
                 return true;
             }
-            if(m * m > num){
+            else if(b > num){
                 e = m - 1;
-            } else{
+            } else if(b < num){
                 s = m + 1;
             }
         }
