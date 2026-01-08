@@ -1,4 +1,5 @@
 package com.practice05;
+//https://leetcode.com/problems/valid-perfect-square/description/
 
 public class PerfectSqr {
     static void main(String[] args) {
