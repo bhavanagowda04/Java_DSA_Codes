@@ -9,6 +9,7 @@ public class IPaddress {
     }
 
     static String defangIPaddr(String address) {
+
         return address.replace(".", "[.]");
     }
 }
