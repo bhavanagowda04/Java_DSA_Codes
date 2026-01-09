@@ -5,6 +5,7 @@ public class ReverseNum {
         rev(1234);
         System.out.println(ans);
         System.out.println(rev2(12345));
+        System.out.println(palindrome(1234321));
     }
 
     static int ans = 0;
@@ -20,6 +21,10 @@ public class ReverseNum {
     static int rev2(int n){
         int digits = (int)(Math.log10(n)) + 1;
         return helper(n,digits);
+    }
+
+    static boolean palindrome(int n){
+        return n == rev2(n);
     }
 
     private static int helper(int n, int digits){
