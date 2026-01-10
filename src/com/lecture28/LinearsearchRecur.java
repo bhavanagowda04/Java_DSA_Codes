@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class LinearsearchRecur {
     static void main(String[] args) {
         int[] arr = {2, 3, 4, 6, 6, 7};
-        System.out.println(linearsearch(arr, 6, 0));
-        System.out.println(findindex(arr,6,0));
-        System.out.println(findindexlast(arr,6,0));
+//        System.out.println(linearsearch(arr, 6, 0));
+//        System.out.println(findindex(arr,6,0));
+//        System.out.println(findindexlast(arr,6,0));
 //        findallindex(arr,6,0);
 //        System.out.println(list);
-        System.out.println(findallindex(arr,6,0,new ArrayList<>()));
-        
+//        System.out.println(findallindex(arr,6,0,new ArrayList<>()));
+        System.out.println(findallindex2(arr,6, 0));
 
     }
 
@@ -63,5 +63,19 @@ public class LinearsearchRecur {
             list.add(index);
         }
         return findallindex(arr, target, index + 1, list);
+    }
+
+    static ArrayList<Integer> findallindex2(int[] arr, int target, int index){
+        ArrayList<Integer> list = new ArrayList<>();
+        if(index == arr.length){
+            return list;
+        }
+        if(arr[index] == target ){
+            list.add(index);
+        }
+       ArrayList<Integer> ans = findallindex2(arr, target, index + 1);
+
+        list.addAll(ans);
+        return list;
     }
 }
