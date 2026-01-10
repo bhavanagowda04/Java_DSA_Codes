@@ -1,4 +1,4 @@
-package com.practice05;
+package com.practice06;
 //https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 import java.util.Arrays;
 

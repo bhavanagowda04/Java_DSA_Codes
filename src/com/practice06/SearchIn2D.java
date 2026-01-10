@@ -1,7 +1,5 @@
-package com.practice05;
+package com.practice06;
 //https://leetcode.com/problems/search-a-2d-matrix/
-
-import java.util.Arrays;
 
 class SearchIn2D {
     static void main(String[] args) {

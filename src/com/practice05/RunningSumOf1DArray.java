@@ -1,4 +1,4 @@
-package com.practice04;
+package com.practice05;
 //https://leetcode.com/problems/running-sum-of-1d-array/description/
 
 import java.util.Arrays;
