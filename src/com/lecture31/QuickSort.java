@@ -39,6 +39,5 @@ public class QuickSort {
         }
         sort(num, low, e);
         sort(num, s, high);
-
     }
 }
