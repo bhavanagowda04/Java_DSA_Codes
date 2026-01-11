@@ -2,11 +2,7 @@ package com.practice08;
 //https://leetcode.com/problems/merge-strings-alternately/
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-class ReversePrefix {
+class MergeString {
     static void main(String[] args) {
         String word1 = "abc";
         String word2 = "pqrxy";
@@ -27,4 +23,5 @@ class ReversePrefix {
         }
         return mix.toString();
     }
+
 }
