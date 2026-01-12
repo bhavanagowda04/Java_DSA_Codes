@@ -4,10 +4,17 @@ import java.util.ArrayList;
 
 public class Maze {
     static void main(String[] args) {
-        System.out.println(count(3,3));
-        path("",3,3);
-        System.out.println(path1("",3,3));
-        System.out.println(pathDiagnol("",3,3));
+//        System.out.println(count(3,3));
+//        path("",3,3);
+//        System.out.println(path1("",3,3));
+//        System.out.println(pathDiagnol("",3,3));
+
+        boolean[][] board = {
+                {true,true,true},
+                {true,false,true},
+                {true,true,true}
+        };
+        pathrestrictions("",board, 0, 0);
     }
 
     static int count(int r, int c){
@@ -69,4 +76,21 @@ public class Maze {
         }
         return list;
     }
+
+    static void pathrestrictions(String p, boolean[][] maze, int r, int c){
+        if(r == maze.length-1 && c == maze[0].length - 1){
+            System.out.println(p);
+            return;
+        }
+        if(!maze[r][c]){
+            return;
+        }
+        if(r < maze.length-1){
+            pathrestrictions(p + 'D',maze,r + 1, c);
+        }
+        if(c < maze[0].length - 1){
+            pathrestrictions(p + 'R', maze, r,c + 1);
+        }
+    }
+
 }
