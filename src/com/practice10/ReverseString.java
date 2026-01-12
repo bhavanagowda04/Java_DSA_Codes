@@ -1,4 +1,4 @@
-package com.practice08;
+package com.practice10;
 //https://leetcode.com/problems/reverse-string/description/
 
 class ReverseString {
