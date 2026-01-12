@@ -12,19 +12,16 @@ hard
 1, 2, 3
 
 Practice 06 Searching
-Easy
-
+Easy:
 Guess Number Higher or Lower
 First Bad Version
-Arranging Coins(Easy)
 Kth Missing Positive Number
 Intersection of Two Arrays
 Intersection of Two Arrays II
 Fair Candy Swap
 Special Array With X Elements Greater Than or Equal X
 
-Medium
-
+Medium:
 Single Element in a Sorted Array
 Search in Rotated Sorted Array
 Search in Rotated Sorted Array II
@@ -39,8 +36,7 @@ Frequency of the Most Frequent Element
 Capacity To Ship Packages Within D Days
 4 Sum
 
-Hard
-
+Hard:
 Median of Two Sorted Arrays
 Find Minimum in Rotated Sorted Array II
 Aggressive cows

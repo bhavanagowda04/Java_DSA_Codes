@@ -2,7 +2,7 @@ package com.practice08;
 //https://leetcode.com/problems/length-of-last-word/description/
 
 
-class Solution {
+class LengthOfLastWord {
     static void main(String[] args) {
         String s = "Hello World";
         System.out.println(lengthOfLastWord(s));
