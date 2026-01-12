@@ -39,4 +39,21 @@ public class LetterCombination_17 {
         }
         return list;
     }
+
+    static List<String> letterCombinations(String digits) {
+        String p = "";
+        if(digits.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        int digit = digits.charAt(0) - '0';   //this will convert '2' to 2
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i = (digit - 1) * 3; i < digit * 3; i++) {
+            char ch = (char)('a' + i);
+            list.addAll(pad1(p + ch, digits.substring(1)));
+        }
+        return list;
+    }
 }
