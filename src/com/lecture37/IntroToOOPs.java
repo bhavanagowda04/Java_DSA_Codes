@@ -19,7 +19,7 @@ public class IntroToOOPs {
         prak.greeting();
 
     }
-} 
+}
 
 class Student{
     int rno;
