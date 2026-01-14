@@ -65,6 +65,7 @@ public class NKnights {
     private static void display(boolean[][] board){
         for(boolean[] row : board){
             for(boolean element : row){
+
                 if(element) {
                     System.out.print("K ");
                 } else{
