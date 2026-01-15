@@ -1,11 +1,9 @@
 package com.practice05;
 //https://leetcode.com/problems/contains-duplicate/description/
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-class Solution {
+class ContainsDuplicate {
     static void main(String[] args) {
         int[] nums = {0};
         int k = 1;
