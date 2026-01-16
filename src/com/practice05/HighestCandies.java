@@ -4,7 +4,7 @@ package com.practice05;
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class HighestCandies {
     static void main(String[] args) {
         int[] candies = {2,3,5,1,3};
         int extraCandies = 3;
