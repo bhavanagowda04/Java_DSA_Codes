@@ -1,4 +1,5 @@
 package com.practice05;
+//https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,23 +13,16 @@ class Solution {
     }
     static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> ans = new ArrayList<>();
-        int[] more = new int[candies.length];
-        int k = 0;
-        int i = 0;
-        while (i < candies.length) {
-             more[k] = candies[i] + extraCandies;
-             k++;
-             i++;
-        }
-        while (k > more.length){
-            if(more[k] < candies[i]){
-                ans.add(false);
+        for (int i = 0; i < candies.length; i++) {
+            int more = candies[i] + extraCandies;
+            boolean isGreatest = true;
+            for (int j = 0; j < candies.length; j++) {
+                if(more < candies[j]) {
+                    isGreatest = false;
+                    break;
+                }
             }
-            else{
-                ans.add(true);
-                i++;
-            }
-            k++;
+            ans.add(isGreatest);
         }
         return ans;
     }
