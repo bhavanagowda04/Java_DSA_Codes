@@ -1,7 +1,7 @@
 package com.practice05;
 //https://leetcode.com/problems/reshape-the-matrix/
 
-class Solution {
+class MatrixReshape {
     public int[][] matrixReshape(int[][] mat, int r, int c) {
         int m = mat.length;
         int n = mat[0].length;
