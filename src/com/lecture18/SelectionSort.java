@@ -2,7 +2,7 @@ package com.lecture18;
 
 import java.util.Arrays;
 
-public class Main {
+public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {3,1,2};
         selection(arr);

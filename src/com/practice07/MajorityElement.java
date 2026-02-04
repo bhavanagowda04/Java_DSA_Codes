@@ -1,4 +1,4 @@
-package com.Leetcodes;
+package com.practice07;
 //https://leetcode.com/problems/majority-element/description/?envType=problem-list-v2&envId=array
 
 import java.util.Arrays;
