@@ -1,21 +1,22 @@
 package com.practice07;
-//https://leetcode.com/problems/squares-of-a-sorted-array/
+//https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/
 
 import java.util.Arrays;
 
 class Solution {
     static void main(String[] args) {
-        int[] nums ={-4,-1,0,3,10};
-        System.out.println(Arrays.toString(sortedSquares(nums)));
+        int[] salary = {4000,2000,3000,1000};
+        System.out.println(average(salary));
     }
-    static int[] sortedSquares(int[] nums) {
-        int[] ans = new int[nums.length];
-        int k = 0;
-        for (int i = 0; i < nums.length; i++) {
-            ans[k] = nums[i] * nums[i];
-            k++;
+    static double average(int[] salary) {
+        Arrays.sort(salary);
+        double ans = 0;
+        int count = 0;
+        for (int i = 1; i <= salary.length-2; i++) {
+            ans = ans + salary[i];
+            count++;
         }
-        Arrays.sort(ans);
+        ans = ans / count;
         return ans;
     }
 }
