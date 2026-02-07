@@ -3,7 +3,7 @@ package com.practice07;
 
 import java.util.Arrays;
 
-class Solution {
+class SalaryAverage {
     static void main(String[] args) {
         int[] salary = {4000,2000,3000,1000};
         System.out.println(average(salary));
