@@ -1,0 +1,10 @@
+package com.Leetcodes;
+//https://leetcode.com/problems/power-of-four/?envType=problem-list-v2&envId=math
+
+class PowerOfFour {
+    public boolean isPowerOfFour(int n) {
+        if (n == 1) return true;     
+        if (n <= 0 || n % 4 != 0) return false;
+        return isPowerOfFour(n / 4);
+    }
+}
