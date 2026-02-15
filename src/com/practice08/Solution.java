@@ -1,20 +1,25 @@
 package com.practice08;
-//https://leetcode.com/problems/reverse-words-in-a-string-iii/
+//https://leetcode.com/problems/long-pressed-name/
+
 
 class Solution {
-    public String reverseWords(String s) {
-        String[] words = s.split(" ");
-        StringBuilder result = new StringBuilder();
+    public boolean isLongPressedName(String name, String typed) {
+        int i = 0, j = 0;
         
-        for (int i = 0; i < words.length; i++) {
-            StringBuilder temp = new StringBuilder(words[i]);
-            result.append(temp.reverse());
+        while (j < typed.length()) {
             
-            if (i != words.length - 1) {
-                result.append(" ");
+            if (i < name.length() && name.charAt(i) == typed.charAt(j)) {
+                i++;
+                j++;
+            } 
+            else if (j > 0 && typed.charAt(j) == typed.charAt(j - 1)) {
+                j++;
+            } 
+            else {
+                return false;
             }
         }
         
-        return result.toString();
+        return i == name.length();
     }
 }
