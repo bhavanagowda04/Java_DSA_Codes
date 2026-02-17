@@ -3,7 +3,7 @@ package com.practice07;
 
 import java.util.Arrays;
 
-class Solution {
+class IsArithmeticProgression {
     static void main(String[] args) {
         int[] arr = {3,5,1};
         System.out.println(canMakeArithmeticProgression(arr));
