@@ -1,32 +1,15 @@
 package com.practice08;
-//https://leetcode.com/problems/add-binary/
+//https://leetcode.com/problems/maximum-repeating-substring/
+
 class Solution {
-    public String addBinary(String a, String b) {
-        
-        StringBuilder result = new StringBuilder();
-        
-        int i = a.length() - 1;
-        int j = b.length() - 1;
-        int carry = 0;
-        
-        while (i >= 0 || j >= 0 || carry != 0) {
-            
-            int sum = carry;
-            
-            if (i >= 0) {
-                sum += a.charAt(i) - '0';
-                i--;
-            }
-            
-            if (j >= 0) {
-                sum += b.charAt(j) - '0';
-                j--;
-            }
-            
-            result.append(sum % 2);
-            carry = sum / 2;
+    public int maxRepeating(String sequence, String word) {
+        int count = 0;
+        String current = word;
+
+        while (sequence.contains(current)) {
+            count++;
+            current += word;
         }
-        
-        return result.reverse().toString();
+        return count;
     }
 }

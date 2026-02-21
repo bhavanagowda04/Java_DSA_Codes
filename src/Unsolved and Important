@@ -7,9 +7,9 @@ easy
 11, 14, 18, 19, 20, 22, 24
 25, 27, 28
 medium
-1, 2, 3, 4, 5, 7, 10
+1, 2, 3, 4, 7, 10
 hard
-1, 2, 3
+1, 3
 
 Practice 06 Searching
 Easy:
@@ -58,15 +58,9 @@ Special Array With X Elements Greater Than or Equal X
 
 Medium:
 3Sum Closest
-Group Anagrams
+4sum
+Group Anagrams  //hash table
 Merge Intervals
-Sort Colors
 Insertion Sort List
 Sort List
 Largest Number
-Kth Largest Element in an Array
-Find the Duplicate Number
-Find all Duplicates in an array
-
-Hard
-First missing Positive
