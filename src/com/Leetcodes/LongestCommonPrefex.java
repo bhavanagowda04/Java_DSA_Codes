@@ -1,7 +1,7 @@
 package com.Leetcodes;
 //https://leetcode.com/problems/longest-common-prefix/
 
-class Solution {
+class LongestCommonPrefex {
     public String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
