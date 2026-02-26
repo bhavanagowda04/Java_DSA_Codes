@@ -1,7 +1,7 @@
 package com.Leetcodes;
 //https://leetcode.com/problems/duplicate-zeros/?envType=problem-list-v2&envId=array
 
-class Solution {
+class DuplicateZeros {
     public void duplicateZeros(int[] arr) {
         int n = arr.length;
         int zeros = 0;
