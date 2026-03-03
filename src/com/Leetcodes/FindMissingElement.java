@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Solution {
+class FindMissingElement {
     public List<Integer> findMissingElements(int[] nums) {
         List<Integer> result = new ArrayList<>();
 
