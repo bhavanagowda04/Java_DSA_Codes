@@ -4,7 +4,7 @@ package com.Leetcodes;
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class StringMatching {
     public List<String> stringMatching(String[] words) {
         List<String> result = new ArrayList<>();
 
