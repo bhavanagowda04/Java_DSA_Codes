@@ -1,15 +1,34 @@
 package com.Leetcodes;
-//https://leetcode.com/problems/determine-if-two-events-have-conflict/?envType=problem-list-v2&envId=array
+//https://leetcode.com/problems/3sum-closest/
 
+import java.util.Arrays;
 
 class Solution {
-    public boolean haveConflict(String[] event1, String[] event2) {
-         String start1 = event1[0];
-        String end1 = event1[1];
-        
-        String start2 = event2[0];
-        String end2 = event2[1];
-        
-        return start1.compareTo(end2) <= 0 && start2.compareTo(end1) <= 0;
+    public int threeSumClosest(int[] nums, int target) {
+       Arrays.sort(nums);
+        int closest = nums[0] + nums[1] + nums[2];
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1;
+            int right = nums.length - 1;
+
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (Math.abs(sum - target) < Math.abs(closest - target)) {
+                    closest = sum;
+                }
+
+                if (sum < target) {
+                    left++;
+                } else if (sum > target) {
+                    right--;
+                } else {
+                    return sum; // exact match
+                }
+            }
+        }
+
+        return closest; 
     }
 }
